@@ -7,42 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// var rfids = []Rfid{
-// 	{1, "PICC", "1234567890123456"},
-// 	{2, "PICC", "1234567890123456"},
-// 	{3, "PICC", "1234567890123456"},
-// 	{4, "PICC", "1234567890123456"},
-// 	{5, "PICC", "1234567890123456"},
-// 	{6, "PICC", "1234567890123456"},
-// }
-
-// func getAllRfid(c *gin.Context) {
-// 	c.IndentedJSON(http.StatusOK, rfids)
-// }
-
-// func postRfid(c *gin.Context) {
-// 	var newRfid Rfid
-// 	if err := c.BindJSON(&newRfid); err != nil {
-// 		return
-// 	}
-
-// 	rfids = append(rfids, newRfid)
-// 	c.IndentedJSON(http.StatusCreated, newRfid)
-// }
-
-// func getRfidByUid(c *gin.Context) {
-// 	id := c.Param("uid")
-
-// 	for _, a := range rfids {
-// 		if a.UID == id {
-// 			c.IndentedJSON(http.StatusOK, a)
-// 			return
-// 		}
-// 	}
-
-// 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "RFID not found"})
-// }
-
 func corsMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
