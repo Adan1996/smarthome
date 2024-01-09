@@ -32,5 +32,5 @@ func main() {
 	router.GET("/rfids/:uid", rfid.GetRfidByUid)
 	router.POST("/rfids/post", rfid.PostRfid)
 
-	router.Run("localhost:9000")
+	router.Run(":9000")
 }

@@ -19,7 +19,7 @@ func GetRfidByUid(c *gin.Context) {
 	var rfid models.Rfid
 	uid := c.Param("uid")
 
-	if err := models.DB.Where("uid = ?", uid).Find(&rfid).Error; err != nil {
+	if err := models.DB.Where("uid = ?", uid).First(&rfid).Error; err != nil {
 		switch err {
 		case gorm.ErrRecordNotFound:
 			c.AbortWithStatusJSON(http.StatusNotFound, gin.H{"message": "RFID not found"})
